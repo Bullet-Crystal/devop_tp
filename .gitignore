@@ -1,0 +1,26 @@
+# Fichiers secrets — ne jamais commiter
+.env
+.env.mysql
+.env.api
+.settings
+# Garder les exemples pour l'équipe
+!.env.mysql.example
+!.env.api.example
+
+
+# Build output
+target/
+build/
+out/
+
+# IDE specific files
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+*.iws
+
+# Operating System files
+.DS_Store
+Thumbs.db
