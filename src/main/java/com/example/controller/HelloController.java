@@ -14,7 +14,7 @@ public class HelloController {
 
 	@GetMapping("/hello")
 	public String hello(HttpServletRequest request) {
-		return "Hello from Spring Boot - Instance: " + hostname
+		return "Hello from Spring Second Boot - Instance: " + hostname
 				+ ", date: " + LocalDateTime.now()
 				+ ", port: " + request.getServerPort();
 	}
