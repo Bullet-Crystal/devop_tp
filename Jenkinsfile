@@ -12,7 +12,7 @@ pipeline {
 							docker compose down
 							cp $MYSQL_ENV_FILE .env.mysql
 							cp $API_ENV_FILE   .env.api
-							docker compose up -d --build
+							docker compose up -d --build --scale api=3
 							'''
 					}
 				}
