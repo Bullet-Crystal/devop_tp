@@ -3,7 +3,16 @@ pipeline {
     stages {
         stage('Build & Deploy') {
             steps {
-                sh 'docker compose up --build -d --scale api=3'
+							withCredentials([
+									file(credentialsId: 'env-mysql-file', variable: 'MYSQL_ENV_FILE'),
+									file(credentialsId: 'env-api-file',   variable: 'API_ENV_FILE')
+							]) {
+								sh '''
+									cp $MYSQL_ENV_FILE .env.mysql
+									cp $API_ENV_FILE   .env.api
+									docker compose up -d --build
+									'''
+							}
             }
         }
     }
