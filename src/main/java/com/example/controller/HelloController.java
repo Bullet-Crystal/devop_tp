@@ -14,7 +14,7 @@ public class HelloController {
 
 	@GetMapping("/hello")
 	public String hello(HttpServletRequest request) {
-		return "from Spring Boot : Testing webhook it works now :)- Instance: " + hostname
+		return "From Spring Boot with Instance: " + hostname
 				+ ", date: " + LocalDateTime.now()
 				+ ", port: " + request.getServerPort();
 	}
